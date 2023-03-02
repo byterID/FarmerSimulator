@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MenuControl : MonoBehaviour
 {
@@ -25,5 +26,13 @@ public class MenuControl : MonoBehaviour
         anim = GetComponent<Animator>();
         anim.Play("Hide");
         SettingsButton.SetActive(true);
+    }
+    public void SupportBoxActive()
+    {
+        SceneManager.LoadScene("SupportBoxScene");
+    }
+    public void PlacementActive()
+    {
+        SceneManager.LoadScene("PlacementScene");
     }
 }
