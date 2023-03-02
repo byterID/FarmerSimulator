@@ -9,7 +9,13 @@ public class MenuControl : MonoBehaviour
     public GameObject SettingsMenu;
     public GameObject SettingsButton;
     Animator anim;
-    
+    public GameObject ARCam1;
+    public GameObject ARsession1;
+    public GameObject ARCam2;
+    public GameObject ARsession2;
+    public GameObject Butt1;
+    public GameObject Butt2;
+
 
     public void Start()
     {
@@ -29,10 +35,20 @@ public class MenuControl : MonoBehaviour
     }
     public void SupportBoxActive()
     {
-        SceneManager.LoadScene("SupportBoxScene");
+        ARCam1.SetActive(false);
+        ARsession1.SetActive(false);
+        Butt1.SetActive(false);
+        ARCam2.SetActive(true);
+        ARsession2.SetActive(true);
+        Butt2.SetActive(true);
     }
     public void PlacementActive()
     {
-        SceneManager.LoadScene("PlacementScene");
+        ARCam2.SetActive(false);
+        ARsession2.SetActive(false);
+        Butt2.SetActive(false);
+        ARCam1.SetActive(true);
+        ARsession1.SetActive(true);
+        Butt1.SetActive(true);
     }
 }
